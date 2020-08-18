@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
-import { Button } from 'antd';
+import {Switch,Redirect,Route} from 'react-router-dom'
+import Admin from './container/admin/admin'
+ import './App.less';
 export default class App extends Component {
   render() {
     return (
-      <div>
-         <Button danger>Default</Button>
-      </div>
+       <Switch>
+				<Route path="/admin" component={Admin}/>
+				<Redirect to="/admin"/>
+			</Switch>
     )
   }
 }
